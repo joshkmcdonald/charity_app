@@ -7,6 +7,7 @@ class DonationsController < ApplicationController
   end
 
   def show
+    @donation = current_user.donations.find(params[:id])
   end
 
   def new

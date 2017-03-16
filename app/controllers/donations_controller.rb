@@ -1,5 +1,6 @@
 class DonationsController < ApplicationController
-  before_action only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!
+  before_action only: [:index, :show, :edit, :update, :destroy]
 
 
   def index

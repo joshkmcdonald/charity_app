@@ -1,0 +1,8 @@
+<h1>Donations Index</h1>
+
+<% @donations.each do |donation| %>
+  <div>
+    <%= donation.charity_name %>
+    <%= donation.tax_id %>
+  </div>
+<% end %>

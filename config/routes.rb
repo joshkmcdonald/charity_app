@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :donations
   devise_for :users
   # get 'pages/about'
   get 'about', to: 'pages#about'

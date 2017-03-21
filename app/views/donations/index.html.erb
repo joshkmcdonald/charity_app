@@ -2,7 +2,9 @@
 
 <% @donations.each do |donation| %>
   <div>
-    <%= donation.charity_name %>
+    <%= link_to "#{donation.charity_name}", donation_path(donation.id) %>
     <%= donation.tax_id %>
   </div>
 <% end %>
+
+

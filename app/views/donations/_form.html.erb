@@ -1,0 +1,16 @@
+<%= form_for(donation) do |f| %>
+
+  <div class="form-group">
+    <%= f.text_field :charity_name, class: 'form-control', placeholder: 'Charity Name' %>
+  </div>
+
+  <div class="form-group">
+    <%= f.text_field :tax_id, class: 'form-control', placeholder: 'Tax Id Number' %>
+  </div>
+
+
+ 
+  <div class="form-group">
+    <%= f.submit "Submit", class: 'btn btn-primary' %>
+  </div>
+<% end %>

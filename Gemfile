@@ -36,7 +36,7 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'devise'
 gem 'gritter'
-gem 'bootstrap-sass', '~> 3.3.6'
+gem 'bootstrap', '~> 4.0.0.alpha6'
 gem 'font-awesome-rails'
 gem 'dotenv-rails', '~> 2.2'
 gem 'stripe', '~> 2.0', '>= 2.0.1'

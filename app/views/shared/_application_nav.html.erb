@@ -1,16 +1,40 @@
-  
-  <div>
-    <%= link_to "Home", root_path %>
-    <%= link_to "About", about_path %>
-    <%= link_to "Contact", contact_path %>
-  </div>
+<nav class="navbar navbar-toggleable-md navbar-inverse bg-inverse">
+  <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
 
-  <div>
-    <% if user_signed_in? %>
-      <%= link_to "logout", destroy_user_session_path, method: :delete %>
-      <%= link_to "My Donations", donations_path %>
-    <% else %>
-      <%= link_to "Log in", new_user_session_path %>
-      <%= link_to "Register", new_user_registration_path %>
-    <% end %>
+  <%= link_to "Website Name", root_path, class:'navbar-brand' %>
+  
+  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+    <div class="navbar-nav">
+      <%= link_to "Home", root_path, class:'nav-item nav-link' %>
+      <%= link_to "About", about_path, class:'nav-item nav-link' %>
+      <%= link_to "Contact", contact_path, class:'nav-item nav-link' %>
+
+      <li class="nav-item dropdown">
+
+        <a class="nav-link dropdown-toggle" href="http://example.com" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <% if user_signed_in? %>
+            My Account
+          <% else %>
+            Sign In/ Sign UP
+          <% end %>
+        </a>
+
+        <div class="dropdown-menu nav-dropdown" aria-labelledby="navbarDropdownMenuLink">
+          <% if user_signed_in? %>
+            <%= link_to "Donation History", donations_path, class:'dropdown-item' %>
+            <%= link_to "One-Time Donation", new_charge_path, class:'dropdown-item' %>
+            <%= link_to "logout", destroy_user_session_path, method: :delete, class:'dropdown-item' %>
+          <% else %>
+            <%= link_to "Log in", new_user_session_path, class:'dropdown-item' %>
+            <%= link_to "Register", new_user_registration_path, class:'dropdown-item' %>
+          <% end %>
+        </div>
+
+      </li>
+    </div>
   </div>
+</nav>
+
+
